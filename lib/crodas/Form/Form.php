@@ -108,6 +108,23 @@ class Form extends Events
         return $this->render('input', $name, $args);
     }
 
+    public function select($name, Array $values, Array $args = array(), $value = null)
+    {
+        $args['name'] = $name;
+        $targs = Templates::get('helper/args')->render(compact('args'), true);
+
+        if (!array_diff(range(0, count($values)-1), array_keys($values))) {
+            $values = array_combine($values, $values);
+        }
+
+        if (empty($value) && !empty($this->values[$name])) {
+            $value = $this->values[$name];
+        }
+
+        return Templates::get('select')
+            ->render(compact('targs', 'value', 'values'), $this->buffer);
+    }
+
     public function checkbox($name, $value, Array $args = array(), $selected = null)
     {
         $args['type'] = 'checkbox';

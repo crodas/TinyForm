@@ -12,6 +12,7 @@ class SimpleTest extends \phpunit_framework_testcase
             ['options1'],
             ['options2'],
             ['checkbox1'],
+            ['select1'],
             ['form1'],
             ['form2'],
         ];

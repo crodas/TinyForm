@@ -3,23 +3,57 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b55e2257b76c233152bc2cc315cca35e",
+    "hash": "2ea99d2ede4ca9a8aee9c03bc323fd84",
     "packages": [
         {
-            "name": "crodas/notoj",
-            "version": "v0.1.6",
+            "name": "crodas/class-info",
+            "version": "v0.1.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/crodas/Notoj.git",
-                "reference": "ba9125079764a0edd1cd4e955646d95df29824c1"
+                "url": "https://github.com/crodas/ClassInfo.git",
+                "reference": "b7f56fde0aac50e2a2a11230039949d649048c32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crodas/Notoj/zipball/ba9125079764a0edd1cd4e955646d95df29824c1",
-                "reference": "ba9125079764a0edd1cd4e955646d95df29824c1",
+                "url": "https://api.github.com/repos/crodas/ClassInfo/zipball/b7f56fde0aac50e2a2a11230039949d649048c32",
+                "reference": "b7f56fde0aac50e2a2a11230039949d649048c32",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "crodas": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-4-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "César D. Rodas",
+                    "email": "crodas@php.net"
+                }
+            ],
+            "description": "Get classes and functions defined in a given file",
+            "time": "2013-10-24 16:58:56"
+        },
+        {
+            "name": "crodas/notoj",
+            "version": "v0.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/crodas/Notoj.git",
+                "reference": "f3d8db3fb8fc907e150e46dd117dba3bfa0187aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/crodas/Notoj/zipball/f3d8db3fb8fc907e150e46dd117dba3bfa0187aa",
+                "reference": "f3d8db3fb8fc907e150e46dd117dba3bfa0187aa",
                 "shasum": ""
             },
             "require": {
+                "crodas/class-info": "~0.1",
                 "php": ">=5.3.0"
             },
             "type": "library",
@@ -39,7 +73,7 @@
                 }
             ],
             "description": "Annotation parser. Uses reflection and provides cache out of the box.",
-            "time": "2013-10-21 04:39:53"
+            "time": "2013-10-24 04:14:47"
         },
         {
             "name": "crodas/path",
@@ -47,12 +81,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/crodas/Path.git",
-                "reference": "dd30f039e0647b52b4e3b16a02930c0dfd469554"
+                "reference": "142275ba3647b1a34a16dba1954999821f701804"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crodas/Path/zipball/dd30f039e0647b52b4e3b16a02930c0dfd469554",
-                "reference": "dd30f039e0647b52b4e3b16a02930c0dfd469554",
+                "url": "https://api.github.com/repos/crodas/Path/zipball/142275ba3647b1a34a16dba1954999821f701804",
+                "reference": "142275ba3647b1a34a16dba1954999821f701804",
                 "shasum": ""
             },
             "type": "library",
@@ -72,20 +106,20 @@
                 }
             ],
             "description": "Library to manipulate paths",
-            "time": "2013-09-24 07:12:15"
+            "time": "2013-10-23 16:48:19"
         },
         {
             "name": "crodas/simple-view-engine",
-            "version": "dev-master",
+            "version": "v0.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/crodas/SimpleView.git",
-                "reference": "933383d13e4d9464941895f0bf4befdfc6f41e5a"
+                "reference": "0f38e5b7d90b693754a59fd3cc8b2c29c92f679f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crodas/SimpleView/zipball/933383d13e4d9464941895f0bf4befdfc6f41e5a",
-                "reference": "933383d13e4d9464941895f0bf4befdfc6f41e5a",
+                "url": "https://api.github.com/repos/crodas/SimpleView/zipball/0f38e5b7d90b693754a59fd3cc8b2c29c92f679f",
+                "reference": "0f38e5b7d90b693754a59fd3cc8b2c29c92f679f",
                 "shasum": ""
             },
             "require": {
@@ -110,7 +144,7 @@
                 }
             ],
             "description": "Simple View engine designed to generate code. Based on Laravel's 4 Blade.",
-            "time": "2013-10-23 03:33:26"
+            "time": "2013-10-25 19:42:43"
         },
         {
             "name": "crodas/validator",
@@ -118,12 +152,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/crodas/Validator.git",
-                "reference": "81fa6c313f43a3844a9cc72c153377e0fa2087d7"
+                "reference": "81a44326ea8710b6357538cd8f6767923c8e3ae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crodas/Validator/zipball/81fa6c313f43a3844a9cc72c153377e0fa2087d7",
-                "reference": "81fa6c313f43a3844a9cc72c153377e0fa2087d7",
+                "url": "https://api.github.com/repos/crodas/Validator/zipball/81a44326ea8710b6357538cd8f6767923c8e3ae0",
+                "reference": "81a44326ea8710b6357538cd8f6767923c8e3ae0",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +174,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD"
+                "BSD-4-Clause"
             ],
             "authors": [
                 {
@@ -149,7 +183,7 @@
                 }
             ],
             "description": "Validation library",
-            "time": "2013-10-22 23:26:11"
+            "time": "2013-10-25 02:32:21"
         },
         {
             "name": "crodas/watch-files",
@@ -194,12 +228,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "608960cd7f7e906e64d6586b9152e308f7ea0ff2"
+                "reference": "662a2922e0bcb3669e66ab36c20ce508c68b1d46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/608960cd7f7e906e64d6586b9152e308f7ea0ff2",
-                "reference": "608960cd7f7e906e64d6586b9152e308f7ea0ff2",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/662a2922e0bcb3669e66ab36c20ce508c68b1d46",
+                "reference": "662a2922e0bcb3669e66ab36c20ce508c68b1d46",
                 "shasum": ""
             },
             "require": {
@@ -238,7 +272,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-10-16 16:16:10"
+            "time": "2013-10-23 08:18:42"
         },
         {
             "name": "symfony/finder",

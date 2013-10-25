@@ -116,10 +116,7 @@ namespace {
                 ob_start();
             }
             echo "<input" . ($targs) . " value=\"";
-            $__temporary = $value;
-            if (!empty($__temporary)) {
-                echo htmlentities($__temporary, ENT_QUOTES, 'UTF-8', false);
-            }
+            echo htmlentities($value, ENT_QUOTES, 'UTF-8', false);
             echo "\" />\n";
 
             if ($return) {
@@ -145,12 +142,49 @@ namespace {
             }
             foreach($args as $name => $value) {
                 echo " " . ($name) . "=\"";
-                $__temporary = $value;
-                if (!empty($__temporary)) {
-                    echo htmlentities($__temporary, ENT_QUOTES, 'UTF-8', false);
-                }
+                echo htmlentities($value, ENT_QUOTES, 'UTF-8', false);
                 echo "\"";
             }
+
+            if ($return) {
+                return ob_get_clean();
+            }
+
+        }
+    }
+
+    /** 
+     *  Template class generated from Select.tpl
+     */
+    class class_4a4ac2bb507b299418b55dc5ed0c37859c658a5b extends base_template_9c0422eca186a41162c0a3a07621c12bc23fa345
+    {
+
+        public function render(Array $vars = array(), $return = false)
+        {
+            $this->context = $vars;
+
+            extract($vars);
+            if ($return) {
+                ob_start();
+            }
+            echo "<select" . ($targs) . ">\n";
+            foreach($values as $key => $val) {
+                if ($key === $value) {
+                    echo "        <option value=\"";
+                    echo htmlentities((string)$key, ENT_QUOTES, 'UTF-8', false);
+                    echo "\" selected=\"selected\">";
+                    echo htmlentities($val, ENT_QUOTES, 'UTF-8', false);
+                    echo "</option>\n";
+                }
+                else {
+                    echo "        <option value=\"";
+                    echo htmlentities((string)$key, ENT_QUOTES, 'UTF-8', false);
+                    echo "\">";
+                    echo htmlentities($val, ENT_QUOTES, 'UTF-8', false);
+                    echo "</option>\n";
+                }
+            }
+            echo "</select>\n";
 
             if ($return) {
                 return ob_get_clean();
@@ -174,10 +208,7 @@ namespace {
                 ob_start();
             }
             echo "<textarea " . ($targs) . ">";
-            $__temporary = $value;
-            if (!empty($__temporary)) {
-                echo htmlentities($__temporary, ENT_QUOTES, 'UTF-8', false);
-            }
+            echo htmlentities($value, ENT_QUOTES, 'UTF-8', false);
             echo "</textarea>\n";
 
             if ($return) {
@@ -200,7 +231,8 @@ namespace crodas\Form {
                 1 => 'form/close',
                 2 => 'input',
                 3 => 'helper/args',
-                4 => 'textarea',
+                4 => 'select',
+                5 => 'textarea',
             );
         }
 
@@ -221,6 +253,8 @@ namespace crodas\Form {
                 'input' => 'class_d4ddab4cd6817f3305d48ee10c558b647af67649',
                 'helper/args.tpl' => 'class_e4aa6b52fc3bb37cb75b2d2cc109c7738aec4e04',
                 'helper/args' => 'class_e4aa6b52fc3bb37cb75b2d2cc109c7738aec4e04',
+                'select.tpl' => 'class_4a4ac2bb507b299418b55dc5ed0c37859c658a5b',
+                'select' => 'class_4a4ac2bb507b299418b55dc5ed0c37859c658a5b',
                 'textarea.tpl' => 'class_f60f38ed5f924897c2e20bec8b721261c794dac5',
                 'textarea' => 'class_f60f38ed5f924897c2e20bec8b721261c794dac5',
             );
