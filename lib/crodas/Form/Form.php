@@ -93,7 +93,7 @@ class Form extends Events
 
     public function text($name, Array $args = array(), $value = null)
     {
-        $args['type'] = 'input';
+        $args['type'] = 'text';
         return $this->render('input', $name, $args, $value);
     }
 
@@ -136,7 +136,7 @@ class Form extends Events
             if ($this->buffer) {
                 $text .= $value;
             } else {
-                echo $text;
+                echo $value;
             }
         }
         return $text;
