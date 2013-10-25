@@ -1,6 +1,6 @@
 <?php
 
-$form = new \crodas\Form\Form;
+$form = new \crodas\Form\Form(False);
 $form->checkbox('male', 'yes');
 $form->checkbox('female', 'yes');
 

@@ -1,5 +1,5 @@
 <?php
-$form = new \crodas\Form\Form;
+$form = new \crodas\Form\Form(false);
 $form->open();
 $form->populate(['foobar' => '"foobar']);
 $form->text('foobar', ['class' => 'foobar']);

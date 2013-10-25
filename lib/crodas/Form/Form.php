@@ -40,9 +40,11 @@ class Form extends Events
 {
     protected $values;
     protected $token;
+    protected $buffer = true;
 
-    public function __construct()
+    public function __construct($buffer = true)
     {
+        $this->buffer = $buffer;
     }
 
     public function populate(Array $values)
@@ -55,19 +57,18 @@ class Form extends Events
     {
         $args  = array_merge($extra, compact('action', 'method'));
         $targs = Templates::get('helper/args')->render(compact('args'), true);
-        Templates::get('form/open')
-            ->render(compact('targs'));
+        $text  = Templates::get('form/open')
+            ->render(compact('targs'), $this->buffer);
 
         self::trigger('open', $this, $args);
 
-        return $this;
+        return $text;
     }
 
     public function close()
     {
-        Templates::get('form/close')
-            ->render(compact('action', 'method'));
-        return $this;
+        return Templates::get('form/close')
+            ->render(compact('action', 'method'), $this->buffer);
     }
 
     protected function render($type, $name, Array $args = [], $value = null)
@@ -80,8 +81,8 @@ class Form extends Events
 
         $targs = Templates::get('helper/args')->render(compact('args'), true);
 
-        Templates::get($type)
-            ->render(compact('targs', 'value'));
+        return Templates::get($type)
+            ->render(compact('targs', 'value'), $this->buffer);
     }
 
     public function hidden($name, $value = null, Array $args = array())
@@ -129,9 +130,15 @@ class Form extends Events
 
     public function options($name, Array $values, Array $args = array())
     {
+        $text = "";
         foreach ($values as $key => $value) {
-            $this->radio($name, $key, $args);
-            echo $value;
+            $text .= $this->radio($name, $key, $args);
+            if ($this->buffer) {
+                $text .= $value;
+            } else {
+                echo $text;
+            }
         }
+        return $text;
     }
 }
