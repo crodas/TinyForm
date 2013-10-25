@@ -1,0 +1,307 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "b55e2257b76c233152bc2cc315cca35e",
+    "packages": [
+        {
+            "name": "crodas/notoj",
+            "version": "v0.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/crodas/Notoj.git",
+                "reference": "ba9125079764a0edd1cd4e955646d95df29824c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/crodas/Notoj/zipball/ba9125079764a0edd1cd4e955646d95df29824c1",
+                "reference": "ba9125079764a0edd1cd4e955646d95df29824c1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Notoj": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-4-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "César D. Rodas",
+                    "email": "crodas@php.net"
+                }
+            ],
+            "description": "Annotation parser. Uses reflection and provides cache out of the box.",
+            "time": "2013-10-21 04:39:53"
+        },
+        {
+            "name": "crodas/path",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/crodas/Path.git",
+                "reference": "dd30f039e0647b52b4e3b16a02930c0dfd469554"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/crodas/Path/zipball/dd30f039e0647b52b4e3b16a02930c0dfd469554",
+                "reference": "dd30f039e0647b52b4e3b16a02930c0dfd469554",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "crodas": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-4-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "César D. Rodas",
+                    "email": "crodas@php.net"
+                }
+            ],
+            "description": "Library to manipulate paths",
+            "time": "2013-09-24 07:12:15"
+        },
+        {
+            "name": "crodas/simple-view-engine",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/crodas/SimpleView.git",
+                "reference": "933383d13e4d9464941895f0bf4befdfc6f41e5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/crodas/SimpleView/zipball/933383d13e4d9464941895f0bf4befdfc6f41e5a",
+                "reference": "933383d13e4d9464941895f0bf4befdfc6f41e5a",
+                "shasum": ""
+            },
+            "require": {
+                "crodas/watch-files": "*",
+                "symfony/console": "*",
+                "symfony/finder": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-4-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "César D. Rodas",
+                    "email": "crodas@php.net"
+                }
+            ],
+            "description": "Simple View engine designed to generate code. Based on Laravel's 4 Blade.",
+            "time": "2013-10-23 03:33:26"
+        },
+        {
+            "name": "crodas/validator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/crodas/Validator.git",
+                "reference": "81fa6c313f43a3844a9cc72c153377e0fa2087d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/crodas/Validator/zipball/81fa6c313f43a3844a9cc72c153377e0fa2087d7",
+                "reference": "81fa6c313f43a3844a9cc72c153377e0fa2087d7",
+                "shasum": ""
+            },
+            "require": {
+                "crodas/notoj": "~0.1",
+                "crodas/path": "*",
+                "crodas/simple-view-engine": "*",
+                "crodas/watch-files": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "crodas": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "César D. Rodas",
+                    "email": "crodas@php.net"
+                }
+            ],
+            "description": "Validation library",
+            "time": "2013-10-22 23:26:11"
+        },
+        {
+            "name": "crodas/watch-files",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/crodas/WatchFiles.git",
+                "reference": "330ed4ddaca59a6be540b19d979d4ebe08526f36"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/crodas/WatchFiles/zipball/330ed4ddaca59a6be540b19d979d4ebe08526f36",
+                "reference": "330ed4ddaca59a6be540b19d979d4ebe08526f36",
+                "shasum": ""
+            },
+            "require": {
+                "crodas/path": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WatchFiles": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-4-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "César D. Rodas",
+                    "email": "crodas@php.net"
+                }
+            ],
+            "description": "Watch files and directories for changes",
+            "time": "2013-10-20 07:43:43"
+        },
+        {
+            "name": "symfony/console",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console.git",
+                "reference": "608960cd7f7e906e64d6586b9152e308f7ea0ff2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/608960cd7f7e906e64d6586b9152e308f7ea0ff2",
+                "reference": "608960cd7f7e906e64d6586b9152e308f7ea0ff2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "suggest": {
+                "symfony/event-dispatcher": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-10-16 16:16:10"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Finder",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Finder.git",
+                "reference": "e2ce3164ab58b4d54612e630571f158035ee8603"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/e2ce3164ab58b4d54612e630571f158035ee8603",
+                "reference": "e2ce3164ab58b4d54612e630571f158035ee8603",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Finder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-09-19 09:47:34"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
