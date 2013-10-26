@@ -84,7 +84,7 @@ class Form extends Events
 
             $values = $this->values;
             $test   = array();
-            while (is_array($tmp)) {
+            while (is_array($tmp) || is_object($tmp)) {
                 $key = key($tmp);
                 if ($key === 0) {
                     // It is [], so let's count their proper index
@@ -94,11 +94,18 @@ class Form extends Events
                     }
                     $key = $this->incs[$inc]++;
                 }
-                if (empty($values[$key])) {
-                    // not found
-                    return "";
+                if (is_array($values)) {
+                    if (empty($values[$key])) {
+                        // not found
+                        return "";
+                    }
+                    $values = $values[$key];
+                } else {
+                    if (empty($values->$key)) {
+                        return "";
+                    }
+                    $values = $values->$key;
                 }
-                $values = $values[$key];
                 $tmp    = current($tmp);
                 $test[] = $key;
             }
