@@ -7,6 +7,7 @@ class SimpleTest extends \phpunit_framework_testcase
         return [
             ['text1'],
             ['text2'],
+            ['text3'],
             ['textarea1'],
             ['textarea2'],
             ['options1'],

@@ -40,6 +40,7 @@ class Form extends Events
 {
     protected $values;
     protected $token;
+    protected $incs   = array();
     protected $buffer = true;
 
     public function __construct($buffer = true)
@@ -71,13 +72,48 @@ class Form extends Events
             ->render(compact('action', 'method'), $this->buffer);
     }
 
+    protected function getValue($name, $value = null)
+    {
+        if (!empty($value)) {
+            return $value;
+        }
+
+        if (strpos($name, "[") !== false) {
+            // Parse the name as PHP Would parse it :-)
+            parse_str("$name=tmp", $tmp);
+
+            $values = $this->values;
+            $test   = array();
+            while (is_array($tmp)) {
+                $key = key($tmp);
+                if ($key === 0) {
+                    // It is [], so let's count their proper index
+                    $inc = implode("[]", $test);
+                    if (empty($this->incs[$inc])) {
+                        $this->incs[$inc] = 0;
+                    }
+                    $key = $this->incs[$inc]++;
+                }
+                if (empty($values[$key])) {
+                    // not found
+                    return "";
+                }
+                $values = $values[$key];
+                $tmp    = current($tmp);
+                $test[] = $key;
+            }
+            return $values;
+        } else if (!empty($this->values[$name])) {
+            $value = $this->values[$name];
+        }
+        return $value;
+    }
+
     protected function render($type, $name, Array $args = [], $value = null)
     {
         $args['name']  = $name;
 
-        if (empty($value) && !empty($this->values[$name])) {
-            $value = $this->values[$name];
-        }
+        $value = $this->getValue($name, $value);
 
         $targs = Templates::get('helper/args')->render(compact('args'), true);
 
@@ -117,9 +153,7 @@ class Form extends Events
             $values = array_combine($values, $values);
         }
 
-        if (empty($value) && !empty($this->values[$name])) {
-            $value = $this->values[$name];
-        }
+        $value = $this->getValue($name, $value);
 
         return Templates::get('select')
             ->render(compact('targs', 'value', 'values'), $this->buffer);
@@ -128,7 +162,7 @@ class Form extends Events
     public function checkbox($name, $value, Array $args = array(), $selected = null)
     {
         $args['type'] = 'checkbox';
-        if (!empty($selected) || !empty($this->values[$name])) {
+        if ($this->GetValue($name, $selected)) {
             $args['checked'] = 'checked';
         }
 
@@ -138,7 +172,7 @@ class Form extends Events
     public function radio($name, $value, Array $args = array(), $selected = null)
     {
         $args['type'] = 'radio';
-        if (!empty($selected) || !empty($this->values[$name]) && $this->values[$name] == $value) {
+        if ($selected || $this->getValue($name) == $value) {
             $args['checked'] = 'checked';
         }
 
