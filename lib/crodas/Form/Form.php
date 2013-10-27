@@ -61,7 +61,7 @@ class Form extends Events
         $text  = Templates::get('form/open')
             ->render(compact('targs'), $this->buffer);
 
-        self::trigger('open', $this, $args);
+        $text .= self::trigger('open', $this, $args);
 
         return $text;
     }
@@ -133,6 +133,13 @@ class Form extends Events
         $args['type'] = 'hidden';
         return $this->render('input', $name, $args, $value);
     }
+
+    public function password($name, Array $args = array(), $value = null)
+    {
+        $args['type'] = 'password';
+        return $this->render('input', $name, $args, $value);
+    }
+
 
     public function text($name, Array $args = array(), $value = null)
     {

@@ -53,8 +53,13 @@ class Events
         if (empty(self::$events[$name])) {
             return;
         }
+        ob_start();
         foreach (self::$events[$name] as $callback) {
-            $callback($self, $args);
+            $html = $callback($self, $args);
+            if (!empty($html)) {
+                echo $html;
+            }
         }
+        return ob_get_clean();
     }
 }
