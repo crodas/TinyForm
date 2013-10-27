@@ -61,7 +61,11 @@ class Form extends Events
         $text  = Templates::get('form/open')
             ->render(compact('targs'), $this->buffer);
 
-        $text .= self::trigger('open', $this, $args);
+        if ($this->buffer) {
+            $text .= self::trigger('open', $this, $args);
+        } else {
+            echo self::trigger('open', $this, $args);
+        }
 
         return $text;
     }
