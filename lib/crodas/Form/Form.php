@@ -124,7 +124,9 @@ class Form extends Events
     {
         $args['name']  = $name;
 
-        $value = $this->getValue($name, $value);
+        if (!empty($args['type']) && $args['type'] != 'file') {
+            $value = $this->getValue($name, $value);
+        }
 
         $targs = Templates::get('helper/args')->render(compact('args'), true);
 
