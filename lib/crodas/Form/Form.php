@@ -54,6 +54,16 @@ class Form extends Events
         return $this;
     }
 
+    public function setData(Array $values)
+    {
+        return $this->populate;
+    }
+
+    public function getData()
+    {
+        return $this->values;
+    }
+
     public function open($action = '', $method = 'POST', $extra = Array())
     {
         $args  = array_merge($extra, compact('action', 'method'));
