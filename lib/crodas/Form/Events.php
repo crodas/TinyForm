@@ -48,7 +48,7 @@ class Events
         self::$events[$name][] = $callback;
     }
 
-    protected static function trigger($name, $self, Array $args = [])
+    protected static function trigger($name, $self, Array &$args = [])
     {
         if (empty(self::$events[$name])) {
             return;

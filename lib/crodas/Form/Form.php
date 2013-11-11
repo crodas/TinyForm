@@ -128,6 +128,8 @@ class Form extends Events
             $value = $this->getValue($name, $value);
         }
 
+        self::trigger('render', $this, $args);
+
         $targs = Templates::get('helper/args')->render(compact('args'), true);
 
         return Templates::get($type)
