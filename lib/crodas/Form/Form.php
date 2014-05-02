@@ -134,7 +134,7 @@ class Form extends Events
     {
         $args['name']  = $name;
 
-        if ($type != 'input' || (!empty($args['type']) && $args['type'] != 'file')) {
+        if ((!empty($args['type']) && $args['type'] != 'file' && $args['type'] != 'password')) {
             $value = $this->getValue($name, $value);
         }
 
