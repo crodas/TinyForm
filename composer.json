@@ -7,7 +7,8 @@
     "require-dev": {
         "crodas/simple-view-engine": "~0.1"
     },
-    "license": "BSD",
+    "license": "BSD-4-Clause",
+    "version": "v0.1.0",
     "authors": [
         {
             "name": "César D. Rodas",
