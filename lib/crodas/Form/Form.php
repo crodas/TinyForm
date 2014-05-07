@@ -127,6 +127,7 @@ class Form extends Events
         } else if (!empty($this->values[$name])) {
             $value = $this->values[$name];
         }
+
         return $value;
     }
 
