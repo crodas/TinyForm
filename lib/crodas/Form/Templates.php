@@ -56,6 +56,29 @@ namespace {
     }
 
     /** 
+     *  Template class generated from Form/Close.tpl
+     */
+    class class_6793cd8b1f038fcd2974738cbab50005e11a56ac extends base_template_9c0422eca186a41162c0a3a07621c12bc23fa345
+    {
+
+        public function render(Array $vars = array(), $return = false)
+        {
+            $this->context = $vars;
+
+            extract($vars);
+            if ($return) {
+                ob_start();
+            }
+            echo "</form>\n";
+
+            if ($return) {
+                return ob_get_clean();
+            }
+
+        }
+    }
+
+    /** 
      *  Template class generated from Form/Open.tpl
      */
     class class_b1363c8470b10386740925fecde598f5c03a9803 extends base_template_9c0422eca186a41162c0a3a07621c12bc23fa345
@@ -79,9 +102,9 @@ namespace {
     }
 
     /** 
-     *  Template class generated from Form/Close.tpl
+     *  Template class generated from Textarea.tpl
      */
-    class class_6793cd8b1f038fcd2974738cbab50005e11a56ac extends base_template_9c0422eca186a41162c0a3a07621c12bc23fa345
+    class class_f60f38ed5f924897c2e20bec8b721261c794dac5 extends base_template_9c0422eca186a41162c0a3a07621c12bc23fa345
     {
 
         public function render(Array $vars = array(), $return = false)
@@ -92,7 +115,49 @@ namespace {
             if ($return) {
                 ob_start();
             }
-            echo "</form>\n";
+            echo "<textarea " . ($targs) . ">";
+            echo htmlentities($value, ENT_QUOTES, 'UTF-8', false);
+            echo "</textarea>\n";
+
+            if ($return) {
+                return ob_get_clean();
+            }
+
+        }
+    }
+
+    /** 
+     *  Template class generated from Select.tpl
+     */
+    class class_4a4ac2bb507b299418b55dc5ed0c37859c658a5b extends base_template_9c0422eca186a41162c0a3a07621c12bc23fa345
+    {
+
+        public function render(Array $vars = array(), $return = false)
+        {
+            $this->context = $vars;
+
+            extract($vars);
+            if ($return) {
+                ob_start();
+            }
+            echo "<select" . ($targs) . ">\n";
+            foreach($values as $key => $val) {
+                if ((String)$key === (String)$value) {
+                    echo "        <option value=\"";
+                    echo htmlentities((string)$key, ENT_QUOTES, 'UTF-8', false);
+                    echo "\" selected=\"selected\">";
+                    echo htmlentities($val, ENT_QUOTES, 'UTF-8', false);
+                    echo "</option>\n";
+                }
+                else {
+                    echo "        <option value=\"";
+                    echo htmlentities((string)$key, ENT_QUOTES, 'UTF-8', false);
+                    echo "\">";
+                    echo htmlentities($val, ENT_QUOTES, 'UTF-8', false);
+                    echo "</option>\n";
+                }
+            }
+            echo "</select>\n";
 
             if ($return) {
                 return ob_get_clean();
@@ -153,71 +218,6 @@ namespace {
         }
     }
 
-    /** 
-     *  Template class generated from Select.tpl
-     */
-    class class_4a4ac2bb507b299418b55dc5ed0c37859c658a5b extends base_template_9c0422eca186a41162c0a3a07621c12bc23fa345
-    {
-
-        public function render(Array $vars = array(), $return = false)
-        {
-            $this->context = $vars;
-
-            extract($vars);
-            if ($return) {
-                ob_start();
-            }
-            echo "<select" . ($targs) . ">\n";
-            foreach($values as $key => $val) {
-                if ($key === $value) {
-                    echo "        <option value=\"";
-                    echo htmlentities((string)$key, ENT_QUOTES, 'UTF-8', false);
-                    echo "\" selected=\"selected\">";
-                    echo htmlentities($val, ENT_QUOTES, 'UTF-8', false);
-                    echo "</option>\n";
-                }
-                else {
-                    echo "        <option value=\"";
-                    echo htmlentities((string)$key, ENT_QUOTES, 'UTF-8', false);
-                    echo "\">";
-                    echo htmlentities($val, ENT_QUOTES, 'UTF-8', false);
-                    echo "</option>\n";
-                }
-            }
-            echo "</select>\n";
-
-            if ($return) {
-                return ob_get_clean();
-            }
-
-        }
-    }
-
-    /** 
-     *  Template class generated from Textarea.tpl
-     */
-    class class_f60f38ed5f924897c2e20bec8b721261c794dac5 extends base_template_9c0422eca186a41162c0a3a07621c12bc23fa345
-    {
-
-        public function render(Array $vars = array(), $return = false)
-        {
-            $this->context = $vars;
-
-            extract($vars);
-            if ($return) {
-                ob_start();
-            }
-            echo "<textarea " . ($targs) . ">";
-            echo htmlentities($value, ENT_QUOTES, 'UTF-8', false);
-            echo "</textarea>\n";
-
-            if ($return) {
-                return ob_get_clean();
-            }
-
-        }
-    }
-
 }
 
 namespace crodas\Form {
@@ -227,12 +227,12 @@ namespace crodas\Form {
         public static function getAll()
         {
             return array (
-                0 => 'form/open',
-                1 => 'form/close',
-                2 => 'input',
-                3 => 'helper/args',
-                4 => 'select',
-                5 => 'textarea',
+                0 => 'form/close',
+                1 => 'form/open',
+                2 => 'textarea',
+                3 => 'select',
+                4 => 'input',
+                5 => 'helper/args',
             );
         }
 
@@ -245,18 +245,18 @@ namespace crodas\Form {
         public static function get($name, Array $context = array())
         {
             static $classes = array (
-                'form/open.tpl' => 'class_b1363c8470b10386740925fecde598f5c03a9803',
-                'form/open' => 'class_b1363c8470b10386740925fecde598f5c03a9803',
                 'form/close.tpl' => 'class_6793cd8b1f038fcd2974738cbab50005e11a56ac',
                 'form/close' => 'class_6793cd8b1f038fcd2974738cbab50005e11a56ac',
+                'form/open.tpl' => 'class_b1363c8470b10386740925fecde598f5c03a9803',
+                'form/open' => 'class_b1363c8470b10386740925fecde598f5c03a9803',
+                'textarea.tpl' => 'class_f60f38ed5f924897c2e20bec8b721261c794dac5',
+                'textarea' => 'class_f60f38ed5f924897c2e20bec8b721261c794dac5',
+                'select.tpl' => 'class_4a4ac2bb507b299418b55dc5ed0c37859c658a5b',
+                'select' => 'class_4a4ac2bb507b299418b55dc5ed0c37859c658a5b',
                 'input.tpl' => 'class_d4ddab4cd6817f3305d48ee10c558b647af67649',
                 'input' => 'class_d4ddab4cd6817f3305d48ee10c558b647af67649',
                 'helper/args.tpl' => 'class_e4aa6b52fc3bb37cb75b2d2cc109c7738aec4e04',
                 'helper/args' => 'class_e4aa6b52fc3bb37cb75b2d2cc109c7738aec4e04',
-                'select.tpl' => 'class_4a4ac2bb507b299418b55dc5ed0c37859c658a5b',
-                'select' => 'class_4a4ac2bb507b299418b55dc5ed0c37859c658a5b',
-                'textarea.tpl' => 'class_f60f38ed5f924897c2e20bec8b721261c794dac5',
-                'textarea' => 'class_f60f38ed5f924897c2e20bec8b721261c794dac5',
             );
             $name = strtolower($name);
             if (empty($classes[$name])) {
