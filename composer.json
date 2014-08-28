@@ -2,7 +2,8 @@
     "name": "crodas/tiny-form",
     "description": "Tiny library to render forms",
     "require": {
-        "crodas/validator": "*"
+        "crodas/validator": "*",
+        "crodas/service-provider": "*"
     },
     "require-dev": {
         "crodas/simple-view-engine": "~0.1"
