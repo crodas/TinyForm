@@ -2,8 +2,8 @@
     "name": "crodas/tiny-form",
     "description": "Tiny library to render forms",
     "require": {
-        "crodas/validator": "*",
-        "crodas/service-provider": "*"
+        "crodas/validator": "^0.1",
+        "crodas/service-provider": "^0.1"
     },
     "require-dev": {
         "crodas/simple-view-engine": "~0.1"
@@ -16,7 +16,6 @@
             "email": "crodas@php.net"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
             "crodas": "lib/"
